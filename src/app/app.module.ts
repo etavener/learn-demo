@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { PostComponent } from './pages/post/post.component';
+import { NgWpComponentsModule } from 'ng-wp-components';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { PostComponent } from './pages/post/post.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    NgWpComponentsModule.forRoot('https://wp.learnario.com/' )
   ],
   providers: [],
   bootstrap: [AppComponent]
