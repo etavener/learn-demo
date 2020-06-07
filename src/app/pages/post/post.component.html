@@ -1,1 +1,25 @@
-<p>post works!</p>
+<wp-post [slug]="slug$ | async">
+  <ng-template let-post="post">
+    <div class="position-absolute vw-100">
+      <wp-image size="large" [mediaId]="post.featured_media">
+        <ng-template let-image="image" let-media="media">
+          <img class="w-100" [src]="image.source_url" [alt]="media.alt_text" />
+        </ng-template>
+      </wp-image>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="display-3 font-weight-lighter" [ngClass]="{ 'text-white': post.featured_media}">
+            {{ post.title.rendered }}
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 bg-dark text-white mb-4">
+          <div [innerHTML]="post.content.rendered"></div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</wp-post>
