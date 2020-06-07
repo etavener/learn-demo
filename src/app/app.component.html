@@ -1,10 +1,24 @@
 <div class="d-flex flex-column vh-100">
   <header class="bg-dark text-white shadow py-1">
-    <wp-info>
-      <ng-template let-info="info">
-        {{ info.name }}: {{ info.description }}
-      </ng-template>
-    </wp-info>
+    <nav class="navbar navbar-dark navbar-expand-sm">
+      <a class="navbar-brand">
+        <wp-info>
+          <ng-template let-info="info">
+            {{ info.name }}: <span class="font-weight-lighter">{{ info.description }}</span>
+          </ng-template>
+        </wp-info>
+      </a>
+      <wp-menu class="navbar-nav" menuId="6">
+        <ng-template let-menuItem="menuItem">
+          <a class="nav-item nav-link"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact:true }"
+             [routerLink]="menuItem.url">
+            {{ menuItem.title }}
+          </a>
+        </ng-template>
+      </wp-menu>
+    </nav>
   </header>
 
   <div class="flex-grow-1">
