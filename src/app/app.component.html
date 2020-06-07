@@ -25,14 +25,28 @@
     <router-outlet></router-outlet>
   </div>
 
-
   <footer class="bg-light flex-shrink-1">
-    &copy;
-    <wp-info>
-      <ng-template let-info="info">
-        {{ info.name }}
-      </ng-template>
-    </wp-info>
-    2020
+    <div class="container">
+      <wp-menu class="nav flex-row" menuId="9">
+        <ng-template let-menuItem="menuItem">
+          <a class="nav-link small"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact:true }"
+             [routerLink]="menuItem.url">
+            {{ menuItem.title }}
+          </a>
+        </ng-template>
+      </wp-menu>
+    </div>
+
+    <div class="container text-muted">
+      &copy;
+      <wp-info>
+        <ng-template let-info="info">
+          {{ info.name }}
+        </ng-template>
+      </wp-info>
+      2020
+    </div>
   </footer>
 </div>
