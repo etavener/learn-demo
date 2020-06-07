@@ -7,6 +7,29 @@
           <div [innerHTML]="page.content.rendered"></div>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-3">
+          <wp-post-list class="sticky-top d-block" category="2">
+            <ng-template let-post="post">
+              <a class="d-block"
+                 routerLink="." [fragment]="post.slug">
+                {{ post.title.rendered }}
+              </a>
+            </ng-template>
+          </wp-post-list>
+        </div>
+        <div class="col-9">
+          <wp-post-list category="2">
+            <ng-template let-post="post">
+              <section [id]="post.slug">
+                <h2>{{ post.title.rendered }}</h2>
+                <div [innerHTML]="post.content.rendered"></div>
+              </section>
+            </ng-template>
+          </wp-post-list>
+        </div>
+      </div>
     </div>
   </ng-template>
 </wp-page>
