@@ -1,2 +1,24 @@
+<div class="d-flex flex-column vh-100">
+  <header class="bg-dark text-white shadow py-1">
+    <wp-info>
+      <ng-template let-info="info">
+        {{ info.name }}: {{ info.description }}
+      </ng-template>
+    </wp-info>
+  </header>
 
-<router-outlet></router-outlet>
+  <div class="flex-grow-1">
+    <router-outlet></router-outlet>
+  </div>
+
+
+  <footer class="bg-light flex-shrink-1">
+    &copy;
+    <wp-info>
+      <ng-template let-info="info">
+        {{ info.name }}
+      </ng-template>
+    </wp-info>
+    2020
+  </footer>
+</div>
