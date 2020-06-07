@@ -1,1 +1,12 @@
-<p>home works!</p>
+<wp-page slug="home">
+  <ng-template let-page="page">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <h1 class="display-3">{{ page.title.rendered }}</h1>
+          <div [innerHTML]="page.content.rendered"></div>
+        </div>
+      </div>
+    </div>
+  </ng-template>
+</wp-page>
