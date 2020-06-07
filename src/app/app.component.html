@@ -1,7 +1,7 @@
 <div class="d-flex flex-column vh-100">
   <header class="bg-dark text-white shadow py-1">
     <nav class="navbar navbar-dark navbar-expand-sm">
-      <a class="navbar-brand">
+      <a class="navbar-brand" routerLink="/">
         <wp-info>
           <ng-template let-info="info">
             {{ info.name }}: <span class="font-weight-lighter">{{ info.description }}</span>
@@ -29,7 +29,7 @@
     <div class="container">
       <wp-menu class="nav flex-row" menuId="9">
         <ng-template let-menuItem="menuItem">
-          <a class="nav-link small"
+          <a class="nav-link small pl-0"
              routerLinkActive="active"
              [routerLinkActiveOptions]="{ exact:true }"
              [routerLink]="menuItem.url">
@@ -39,7 +39,7 @@
       </wp-menu>
     </div>
 
-    <div class="container text-muted">
+    <div class="container text-muted small py-2">
       &copy;
       <wp-info>
         <ng-template let-info="info">
