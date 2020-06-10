@@ -7,6 +7,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { FaqComponent } from './pages/faq/faq.component';
 import { PostComponent } from './pages/post/post.component';
 import { NgWpComponentsModule } from 'ng-wp-components';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NgWpComponentsModule } from 'ng-wp-components';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgWpComponentsModule.forRoot('https://wp.learnario.com/' )
+    NgWpComponentsModule.forRoot('https://wp.learnario.com/' ),
+    ScullyLibModule
   ],
   providers: [],
   bootstrap: [AppComponent]
