@@ -1,11 +1,13 @@
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
 import { getDelayAngularPlugin } from '@flowaccount/scully-plugin-angular-delay';
+import { MinifyHtml } from 'scully-plugin-minify-html';
 
 const postRenderers = [
   getDelayAngularPlugin({
     delayMilliseconds: 1500
-  })
+  }),
+  MinifyHtml
 ];
 
 const SitemapPlugin = getSitemapPlugin();
