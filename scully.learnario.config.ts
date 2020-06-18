@@ -1,8 +1,14 @@
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
+import { getDelayAngularPlugin } from '@flowaccount/scully-plugin-angular-delay';
+
+const postRenderers = [
+  getDelayAngularPlugin({
+    delayMilliseconds: 1500
+  })
+];
 
 const SitemapPlugin = getSitemapPlugin();
-
 setPluginConfig(SitemapPlugin, {
   urlPrefix: 'https://learnario.com',
   sitemapFilename: 'sitemap.xml',
@@ -23,5 +29,6 @@ export const config: ScullyConfig = {
         property: 'slug'
       }
     }
-  }
+  },
+  defaultPostRenderers: postRenderers
 };
