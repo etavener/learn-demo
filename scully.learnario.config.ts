@@ -1,9 +1,13 @@
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
 import { getDelayAngularPlugin } from '@flowaccount/scully-plugin-angular-delay';
+import { getGoogleAnalyticsPlugin } from '@flowaccount/scully-plugin-google-analytics';
 import { MinifyHtml } from 'scully-plugin-minify-html';
 
 const postRenderers = [
+  getGoogleAnalyticsPlugin({
+    gaTrackingId: 'UA-142214199-2'
+  }),
   getDelayAngularPlugin({
     delayMilliseconds: 1500
   }),

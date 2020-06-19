@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build": "ng build --prod --stats-json",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
@@ -39,6 +39,7 @@
     "@angular/cli": "~9.1.7",
     "@angular/compiler-cli": "~9.1.9",
     "@flowaccount/scully-plugin-angular-delay": "0.0.7",
+    "@flowaccount/scully-plugin-google-analytics": "0.0.2",
     "@gammastream/scully-plugin-sitemap": "^1.0.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
