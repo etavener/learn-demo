@@ -1,5 +1,12 @@
-import { ScullyConfig } from '@scullyio/scully';
+import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 import { MinifyHtml } from 'scully-plugin-minify-html';
+import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
+
+const sitemapPlugin = getSitemapPlugin();
+
+setPluginConfig( sitemapPlugin, {
+  urlPrefix: 'https://learnario.com'
+});
 
 export const config: ScullyConfig = {
   projectRoot: './src',
