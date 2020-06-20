@@ -30,6 +30,7 @@
     "ng-wp-components": "0.0.2",
     "npm": "^6.14.5",
     "rxjs": "~6.5.4",
+    "scully-interceptor": "0.0.4",
     "tslib": "^1.10.0",
     "zone.js": "~0.10.2"
   },
