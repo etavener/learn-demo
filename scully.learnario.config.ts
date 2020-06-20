@@ -1,4 +1,6 @@
 import { ScullyConfig } from '@scullyio/scully';
+import { MinifyHtml } from 'scully-plugin-minify-html';
+
 export const config: ScullyConfig = {
   projectRoot: './src',
   projectName: 'learnario',
@@ -11,5 +13,8 @@ export const config: ScullyConfig = {
         property: 'slug'
       }
     }
-  }
+  },
+  defaultPostRenderers: [
+    MinifyHtml
+  ]
 };
