@@ -40,6 +40,7 @@
     "@angular/compiler-cli": "~9.1.9",
     "@flowaccount/scully-plugin-angular-delay": "0.0.7",
     "@flowaccount/scully-plugin-google-analytics": "0.0.2",
+    "@gammastream/scully-plugin-http404": "^1.0.1",
     "@gammastream/scully-plugin-sitemap": "^1.0.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",

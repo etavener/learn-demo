@@ -1,17 +1,21 @@
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
-import { getDelayAngularPlugin } from '@flowaccount/scully-plugin-angular-delay';
+import { getHttp404Plugin } from '@gammastream/scully-plugin-http404';
+//import { getDelayAngularPlugin } from '@flowaccount/scully-plugin-angular-delay';
 import { getGoogleAnalyticsPlugin } from '@flowaccount/scully-plugin-google-analytics';
 import { MinifyHtml } from 'scully-plugin-minify-html';
+
+const http404Plugin = getHttp404Plugin();
 
 const postRenderers = [
   getGoogleAnalyticsPlugin({
     gaTrackingId: 'UA-142214199-2'
   }),
-  getDelayAngularPlugin({
-    delayMilliseconds: 1500
-  }),
-  MinifyHtml
+  // getDelayAngularPlugin({
+  //   delayMilliseconds: 1500
+  // }),
+  MinifyHtml,
+  http404Plugin
 ];
 
 const SitemapPlugin = getSitemapPlugin();

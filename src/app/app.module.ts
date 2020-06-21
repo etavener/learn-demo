@@ -9,13 +9,15 @@ import { PostComponent } from './pages/post/post.component';
 import { NgWpComponentsModule } from 'ng-wp-components';
 import { ScullyLibModule } from '@scullyio/ng-lib';
 import { ScullyInterceptModule } from 'scully-interceptor';
+import { UnknownComponent } from './pages/unknown/unknown.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     FaqComponent,
-    PostComponent
+    PostComponent,
+    UnknownComponent
   ],
   imports: [
     BrowserModule,
