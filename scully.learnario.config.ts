@@ -1,6 +1,7 @@
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 import { MinifyHtml } from 'scully-plugin-minify-html';
 import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
+import { getDelayAngularPlugin } from '@flowaccount/scully-plugin-angular-delay';
 
 const sitemapPlugin = getSitemapPlugin();
 
@@ -22,6 +23,10 @@ export const config: ScullyConfig = {
     }
   },
   defaultPostRenderers: [
-    MinifyHtml
+    MinifyHtml,
+    getDelayAngularPlugin({
+      delayMilliseconds: 1500,
+      tsConfigPath: 'tsconfig.json'
+    })
   ]
 };
