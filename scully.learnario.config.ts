@@ -1,22 +1,7 @@
 import { ScullyConfig, setPluginConfig } from '@scullyio/scully';
 import { getSitemapPlugin } from '@gammastream/scully-plugin-sitemap';
-import { getHttp404Plugin } from '@gammastream/scully-plugin-http404';
-//import { getDelayAngularPlugin } from '@flowaccount/scully-plugin-angular-delay';
-import { getGoogleAnalyticsPlugin } from '@flowaccount/scully-plugin-google-analytics';
+import { getDelayAngularPlugin } from '@flowaccount/scully-plugin-angular-delay';
 import { MinifyHtml } from 'scully-plugin-minify-html';
-
-const http404Plugin = getHttp404Plugin();
-
-const postRenderers = [
-  getGoogleAnalyticsPlugin({
-    gaTrackingId: 'UA-142214199-2'
-  }),
-  // getDelayAngularPlugin({
-  //   delayMilliseconds: 1500
-  // }),
-  MinifyHtml,
-  http404Plugin
-];
 
 const SitemapPlugin = getSitemapPlugin();
 setPluginConfig(SitemapPlugin, {
@@ -28,8 +13,8 @@ setPluginConfig(SitemapPlugin, {
 });
 
 export const config: ScullyConfig = {
-  projectRoot: "./src",
-  projectName: "learnario",
+  projectRoot: './src',
+  projectName: 'learnario',
   outDir: './dist/static',
   routes: {
     '/:post-slug': {
@@ -40,5 +25,11 @@ export const config: ScullyConfig = {
       }
     }
   },
-  defaultPostRenderers: postRenderers
+  defaultPostRenderers: [
+    getDelayAngularPlugin({
+      delayMilliseconds: 1500,
+      tsConfigPath: 'tsconfig.json'
+    }),
+    MinifyHtml
+  ]
 };
