@@ -5,11 +5,7 @@ import { MinifyHtml } from 'scully-plugin-minify-html';
 
 const SitemapPlugin = getSitemapPlugin();
 setPluginConfig(SitemapPlugin, {
-  urlPrefix: 'https://learnario.com',
-  sitemapFilename: 'sitemap.xml',
-  changeFreq: 'monthly',
-  priority: ['1.0', '0.9', '0.8', '0.7', '0.6', '0.5', '0.4', '0.3', '0.2', '0.1', '0.0'],
-  ignoredRoutes: ['/404']
+  urlPrefix: 'https://learnario.com'
 });
 
 export const config: ScullyConfig = {
@@ -26,10 +22,10 @@ export const config: ScullyConfig = {
     }
   },
   defaultPostRenderers: [
+    MinifyHtml,
     getDelayAngularPlugin({
       delayMilliseconds: 1500,
       tsConfigPath: 'tsconfig.json'
-    }),
-    MinifyHtml
+    })
   ]
 };
