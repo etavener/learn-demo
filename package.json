@@ -40,7 +40,7 @@
     "@gammastream/scully-plugin-sitemap": "^1.0.0",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
-    "fast-xml-parser": "^3.17.4",
+    "fast-xml-parser": "^4.2.4",
     "protractor": "~7.0.0",
     "scully-plugin-minify-html": "^3.1.2",
     "ts-node": "~8.3.0",
